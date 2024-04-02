@@ -25,7 +25,7 @@ Write-Host "User Lastname: $user_lastname"
 Write-Host "User Email: $user_email"
 
 # Read store_name from storeconfig.yaml
-$store_config = Get-Content '../../storeconfig.yaml' | ConvertFrom-Json
+$store_config = Get-Content 'storeconfig.yaml' | ConvertFrom-Json
 $store_name = $store_config.data.store_name
 Write-Host $store_name
 
