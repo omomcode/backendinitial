@@ -7,7 +7,7 @@ You need to install choco first:
 
 In PowerShell as admin:
 
-Run Get-ExecutionPolicy. If it returns Restricted, then run Set-ExecutionPolicy AllSigned
+run command: Get-ExecutionPolicy. If it returns Restricted, then run the command: Set-ExecutionPolicy AllSigned
 
 Then run command: Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
