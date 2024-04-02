@@ -22,7 +22,8 @@ echo "User Firstname: $user_firstname"
 echo "User Lastname: $user_lastname"
 echo "User Email: $user_email"
 
-store_name=$(yq ".data.store_name" ../../storeconfig.yaml)
+$store_name = (Get-Content '../../storeconfig.yaml' | ConvertFrom-Json).data.store_name
+echo "$store_name"
 
 # Change StoreName
 
