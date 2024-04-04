@@ -1,3 +1,141 @@
 ---
 data:
-  store_name: Cool store name
+  profile:
+    name: "Cool Store Name"
+    phone: "+38159285958"
+    email: "email@email.com"
+    region: "Region"
+  billing:
+    name: "John Doe"
+    country: "USA"
+    address: "123 Main Street"
+    apartment: "Apt 101"
+    postal: "12345"
+    city: "New York"
+  currency:
+    currency: "USD"
+  timezone:
+    timezone: "GMT"
+    measurement: "metric"
+    unit: "kg"
+    lengthUnit: "m"
+  shippingzone:
+    - name: "Domestic Zone"
+      countries: {"Serbia"}
+      shippingrate: [1,2]
+      products: [1,2,3]
+    - name: "International Zone"
+      countries: {"USA", "Canada"}
+      shippingrate: [1,2]
+      products: [1,2,3]
+  shippingrate:
+    - rate: 10.00
+      currency: "USD"
+    - rate: 10.00
+      currency: "USD"
+  shippingpackage:
+    - name: "Standard Package"
+      type: "Box"
+      length: 10.5
+      width: 8.2
+      height: 5.0
+      weight: 1.2
+      default: true
+    - name: "Standard Package"
+      type: "Box"
+      length: 10.5
+      width: 8.2
+      height: 5.0
+      weight: 1.2
+      default: false
+  tax:
+    - country_code: "US"
+      state_code: "NY"
+      rate: 8.75
+      name: "Sales Tax"
+      shipping: true
+    - country_code: "US"
+      state_code: "NY"
+      rate: 8.75
+      name: "Sales Tax"
+      shipping: true
+  product:
+      - title: "Product 1"
+        slug: "product-1"
+        description: "Description of Product 1"
+        SKU: "SKU-123"
+        amount_currency_code: "USD"
+        amount_value: 20.00
+        tax_currency_code: "USD"
+        tax_value: 2.50
+        media: 
+          - "image1.jpg"
+          - "image2.jpg"
+        compare_at_price: "25.00"
+        cost_per_item: "15.00"
+        chargeTax: true
+        Quantity: 100
+        Barcode: "123456789"
+        showQuantity: true
+        weight: 1.5
+        measurement_unit: "kg"
+        omcommerce_tax: [1]
+        omcommerce_shippingzones: [1]
+        categories: [1]
+        subcategory: [1]
+        amount_value_converted: 15.00
+        amount_value_converted_currency_code: "EUR"
+      - title: "Product 2"
+        slug: "product-2"
+        description: "Description of Product 2"
+        SKU: "SKU-456"
+        amount_currency_code: "USD"
+        amount_value: 30.00
+        tax_currency_code: "USD"
+        tax_value: 3.75
+        media: 
+          - "image3.jpg"
+          - "image4.jpg"
+        compare_at_price: "35.00"
+        cost_per_item: "25.00"
+        chargeTax: true
+        Quantity: 150
+        Barcode: "987654321"
+        showQuantity: true
+        weight: 2.0
+        measurement_unit: "kg"
+        omcommerce_tax: [1]
+        omcommerce_shippingzones: [1]
+        categories: [1]
+        subcategory: [1]
+        amount_value_converted: 25.00
+        amount_value_converted_currency_code: "EUR"
+  category:
+    - title: "Example Title"
+      description: "Example Description"
+      img:
+        - "image5"
+      products: [1,2]
+      subcategories: [1]
+  subcategory:
+    - title: "Example Subcategory"
+      category: "category_id"
+      products: ["product_id_1", "product_id_2"]
+  paypalsetup:
+    live_paypal_client_id: "your_live_client_id_here"
+    live_paypal_client_secret: "your_live_client_secret_here"
+    sandbox_paypal_client_id: "your_sandbox_client_id_here"
+    sandbox_paypal_client_secret: "your_sandbox_client_secret_here"
+    live: false
+    paypalSelected: true
+    payProGlobalSelected: false
+    paymentThreeSelected: false
+  conversionrate:
+    rate: 0.75
+    conversion_currency: "EUR"
+  gmail:
+    client_id: "your_client_id_here"
+    client_secret: "your_client_secret_here"
+    refresh_token: "your_refresh_token_here"
+    from: "email@example.com"
+    languageRadio: "English"

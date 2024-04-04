@@ -22,7 +22,8 @@ echo "User Firstname: $user_firstname"
 echo "User Lastname: $user_lastname"
 echo "User Email: $user_email"
 
-store_name=$(yq ".data.store_name" storeconfig.yaml)
+store_name=$(yq ".data.profile.store_name" storeconfig.yaml)
+
 echo "$store_name"
 
 # Change StoreName
