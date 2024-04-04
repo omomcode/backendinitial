@@ -1,0 +1,11 @@
+#!/bin/bash
+
+DATABASE_USER="$1"
+DATABASE_PASSWORD="$2"
+DATABASE_NAME="$3"
+DATABASE_HOST="$4"
+
+# Create a new MySQL database
+mysql -u"$DB_ROOT_USER" -p"$DB_ROOT_PASSWORD" -h"$DATABASE_HOST" -e "CREATE DATABASE IF NOT EXISTS $DATABASE_NAME;"
+
+echo "Database created"

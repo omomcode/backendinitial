@@ -24,10 +24,6 @@ echo "User Email: $user_email"
 
 store_name=$(yq ".data.profile.store_name" storeconfig.yaml)
 
-echo "$store_name"
-
-# Change StoreName
-
 profile_response=$(curl -s -H "Authorization: Bearer $token" http://localhost:1337/omcommerce/profile/find)
 
 modified_response=$(echo "$profile_response" | jq --arg store_name "$store_name" '.name = $store_name')
