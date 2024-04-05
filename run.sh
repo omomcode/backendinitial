@@ -69,6 +69,8 @@ npm i @strapi/strapi@v4.15.0
 # Run npm run develop synchronously
 npm run develop &
 
+sleep 10
+
 # Create strapi user
 ./strapi_createuser.sh "$STRAPI_USER_FIRSTNAME" "$STRAPI_USER_LASTNAME" "$STRAPI_USER_EMAIL" "$STRAPI_USER_PASSWORD" 
 
