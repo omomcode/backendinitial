@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # root user is the user who can grant privileges
-export DATABASE_USER="zezanje"
+export DATABASE_USER="root"
 export DATABASE_PASSWORD="root"
 export DATABASE_NAME="ekomerc"
 export DUMP_NAME="ecommerce-20240402184403"
