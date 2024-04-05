@@ -78,5 +78,7 @@ sleep 10
 # Login strapi user
 token=$(./strapi_loginuser.sh "$STRAPI_USER_EMAIL" "$STRAPI_USER_PASSWORD" "$protocol" "$hostname" "$port" | tr -d '\n')
 
+./update_profile "$token" "$protocol" "$hostname" "$port"
+
 # # # Continue with the rest of your script
 # # ./initiscript.sh
