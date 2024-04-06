@@ -8,13 +8,25 @@ export DUMP_NAME="ecommerce-20240402184403"
 export DATABASE_HOST="localhost"
 export DB_ROOT_USER="root"
 export DB_ROOT_PASSWORD="root"
-export STRAPI_USER_FIRSTNAME="Misha"
-export STRAPI_USER_LASTNAME="Zhivanko"
-export STRAPI_USER_EMAIL="tihiway@outlook.com"
+export STRAPI_USER_FIRSTNAME="MishaZ"
+export STRAPI_USER_LASTNAME="ZhivankoZ"
+export STRAPI_USER_EMAIL="tihiway2@outlook.com"
 export STRAPI_USER_PASSWORD="StrongPassword1"
 export protocol="http"
 export hostname="localhost"
 export port="1337"
+
+dependency_flag = 1
+
+if [[ $dependency_flag -eq 1 ]]; then
+    if ! command -v yq &> /dev/null
+    then
+        echo "yq is not installed. Installing yq using snap..."
+		# echo "YourSudoPassword" | sudo -S snap install yq
+		sudo snap install yq
+    fi
+	./install_dependencies.sh
+fi
 
 cd newproj
 
@@ -60,16 +72,13 @@ sed -i "s/^PORT=.*/PORT=$port/" .env.production
 # Import dump to newly created database
 ./db_import_dump.sh "$DATABASE_USER" "$DATABASE_PASSWORD" "$DATABASE_NAME" "$DUMP_NAME" "$DATABASE_HOST"
 
-
-
 npm i
 
 npm i @strapi/strapi@v4.15.0
 
-# Run npm run develop synchronously
-npm run develop &
+npm run build
 
-sleep 10
+nohup npm run start &
 
 # Create strapi user
 ./strapi_createuser.sh "$STRAPI_USER_FIRSTNAME" "$STRAPI_USER_LASTNAME" "$STRAPI_USER_EMAIL" "$STRAPI_USER_PASSWORD" 
@@ -78,7 +87,5 @@ sleep 10
 # Login strapi user
 token=$(./strapi_loginuser.sh "$STRAPI_USER_EMAIL" "$STRAPI_USER_PASSWORD" "$protocol" "$hostname" "$port" | tr -d '\n')
 
-./update_profile "$token" "$protocol" "$hostname" "$port"
-
-# # # Continue with the rest of your script
-# # ./initiscript.sh
+./update_profile.sh "$token" "$protocol" "$hostname" "$port"
+./update_currency.sh "$token" "$protocol" "$hostname" "$port"

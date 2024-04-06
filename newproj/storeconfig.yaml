@@ -1,10 +1,10 @@
 ---
 data:
   profile:
-    name: "Cool Store Name"
+    name: "Store Name"
     phone: "+38159285958"
     email: "email@email.com"
-    region: "Region"
+    region: "Germany"
   billing:
     name: "John Doe"
     country: "USA"
@@ -24,6 +24,7 @@ data:
       countries: {"Serbia"}
       shippingrate: [1,2]
       products: [1,2,3]
+      id: 1
     - name: "International Zone"
       countries: {"USA", "Canada"}
       shippingrate: [1,2]
@@ -31,6 +32,7 @@ data:
   shippingrate:
     - rate: 10.00
       currency: "USD"
+      id: 1
     - rate: 10.00
       currency: "USD"
   shippingpackage:
@@ -41,6 +43,7 @@ data:
       height: 5.0
       weight: 1.2
       default: true
+      id: 1
     - name: "Standard Package"
       type: "Box"
       length: 10.5
@@ -54,6 +57,7 @@ data:
       rate: 8.75
       name: "Sales Tax"
       shipping: true
+      id: 1
     - country_code: "US"
       state_code: "NY"
       rate: 8.75
@@ -68,7 +72,7 @@ data:
         amount_value: 20.00
         tax_currency_code: "USD"
         tax_value: 2.50
-        media: 
+        media:
           - "image1.jpg"
           - "image2.jpg"
         compare_at_price: "25.00"
@@ -85,6 +89,7 @@ data:
         subcategory: [1]
         amount_value_converted: 15.00
         amount_value_converted_currency_code: "EUR"
+        id: 1
       - title: "Product 2"
         slug: "product-2"
         description: "Description of Product 2"
@@ -93,7 +98,7 @@ data:
         amount_value: 30.00
         tax_currency_code: "USD"
         tax_value: 3.75
-        media: 
+        media:
           - "image3.jpg"
           - "image4.jpg"
         compare_at_price: "35.00"
@@ -110,6 +115,7 @@ data:
         subcategory: [1]
         amount_value_converted: 25.00
         amount_value_converted_currency_code: "EUR"
+        id: 2
   category:
     - title: "Example Title"
       description: "Example Description"
@@ -117,10 +123,12 @@ data:
         - "image5"
       products: [1,2]
       subcategories: [1]
+      id: 1
   subcategory:
     - title: "Example Subcategory"
       category: "category_id"
       products: ["product_id_1", "product_id_2"]
+      id: 1
   paypalsetup:
     live_paypal_client_id: "your_live_client_id_here"
     live_paypal_client_secret: "your_live_client_secret_here"

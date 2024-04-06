@@ -1,0 +1,4 @@
+---
+packages:
+  - sudo apt install mariadb-server
+  - sudo apt-get install jq
