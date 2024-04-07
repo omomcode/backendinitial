@@ -1,10 +1,10 @@
 ---
 data:
   profile:
-    name: "Store Name"
+    name: "Modified Store Name"
     phone: "+38159285958"
     email: "email@email.com"
-    region: "Germany"
+    region: "DE"
   billing:
     name: "John Doe"
     country: "USA"
@@ -13,7 +13,7 @@ data:
     postal: "12345"
     city: "New York"
   currency:
-    currency: "USD"
+    currency: "EUR"
   timezone:
     timezone: "GMT"
     measurement: "metric"
