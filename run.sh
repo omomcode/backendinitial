@@ -64,12 +64,15 @@ fi
 sed -i "s/^PORT=.*/PORT=$port/" .env.production
 
 # Create database user if it doesn't exist and give it all privileges
+chmod +x db_createuser_giveprivileges.sh
 ./db_createuser_giveprivileges.sh "$DATABASE_USER" "$DATABASE_PASSWORD" "$DATABASE_HOST" "$DB_ROOT_USER" "$DB_ROOT_PASSWORD"
 
 # Create database if it doesn't exist
+chmod +x db_create_database.sh
 ./db_create_database.sh "$DATABASE_USER" "$DATABASE_PASSWORD" "$DATABASE_NAME" "$DATABASE_HOST"
 
 # Import dump to newly created database
+chmod +x db_import_dump.sh
 ./db_import_dump.sh "$DATABASE_USER" "$DATABASE_PASSWORD" "$DATABASE_NAME" "$DUMP_NAME" "$DATABASE_HOST"
 
 npm i
@@ -81,10 +84,12 @@ npm run build
 nohup npm run start &
 
 # Create strapi user
+chmod +x strapi_createuser.sh
 ./strapi_createuser.sh "$STRAPI_USER_FIRSTNAME" "$STRAPI_USER_LASTNAME" "$STRAPI_USER_EMAIL" "$STRAPI_USER_PASSWORD" 
 
 
 # Login strapi user
+chmod +x strapi_loginuser.sh
 token=$(./strapi_loginuser.sh "$STRAPI_USER_EMAIL" "$STRAPI_USER_PASSWORD" "$protocol" "$hostname" "$port" | tr -d '\n')
 
 ./update_profile.sh "$token" "$protocol" "$hostname" "$port"
